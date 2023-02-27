@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;300;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "work-sans", sans-serif;
+    list-style-type: none;
+    text-decoration: none;
+    outline: none;
+}
+
+:root {
+    --primarycolor: #56d5e3;
+    --whitecolor: #fff;
+    --blackcolor: #000;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+html {
+    font-size: 42%;
+}
+
+.section-1 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--primarycolor);
+    clip-path: polygon(100% 0, 100% 95%, 38% 100%, 0 100%, 0 0);
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+
+.logo i {
+    font-size: 8rem;
+    color: rgba(0, 0, 0, .8);
+}
+
+.navbar {
+    position: absolute;
+    top: 5rem;
+    right: 7%;
+}
+
+.nav-link {
+    font-size: 2.2rem;
+    display: inline-block;
+    margin: 0 2.5rem;
+    color: var(--blackcolor);
+    transition: .5s;
+}
+
+.nav-link:hover {
+    transform: scale(1.5);
+}
+
+/* starting of cube */
+
+.cube-wrapper {
+    perspective: 100rem;
+}
+
+.cube {
+    height: 52rem;
+    width: 30rem;
+    transform-style: preserve-3d;
+    transform: rotateY(91deg);
+    position: relative;
+    top: -1rem;
+}
+
+.front-side,
+.back-side {
+    width: 100%;
+    height: 100%;
+    background-color: #fee;
+    position: absolute;
+    transform-style: preserve-3d;
+    box-shadow: inset .1rem .1rem .1rem #ddd,
+        inset -.1rem -.1rem .1rem #ddd;
+}
+
+.front-side {
+    padding: 2.5rem;
+    transform: translateZ(5rem);
+}
+
+.front-side::before,
+.front-side::after {
+    content: "";
+    width: 100%;
+    height: 10rem;
+    background-color: #fff;
+    position: absolute;
+    box-shadow: inset .1rem .1rem .1rem #ddd,
+        inset -.1rem -.1rem .1rem #ddd;
+}
+
+.front-side::before {
+    top: 0;
+    left: 0;
+    transform: rotateX(-90deg);
+    transform-origin: top;
+}
+
+.front-side::after {
+    bottom: 0;
+    left: 0;
+    transform: rotateX(90deg);
+    transform-origin: bottom;
+}
+
+.front-side img {
+    width: 95%;
+    height: 90%;
+    object-fit: contain;
+}
+
+
+
+.back-side {
+    transform: translateZ(-5rem);
+
+}
+
+.back-side i {
+    font-size: 12rem;
+    color: #56d5e3;
+    text-shadow: .1rem .1rem .2rem #aaa,
+        -.1rem -.1rem .2rem #aaa;
+    transform: rotateY(180deg);
+}
+
+.back-side::before,
+.back-side::after {
+    content: "iPhone";
+    height: 100%;
+    width: 10rem;
+    background-color: #fee;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #ec1919;
+    box-shadow: inset .1rem .1rem .1rem #ddd,
+        inset -.1rem -.1rem .1rem #ddd;
+}
+
+.back-side::before {
+    top: 0;
+    left: 0;
+    transform: rotateY(-90deg);
+    transform-origin: left;
+}
+
+.back-side::after {
+    top: 0;
+    right: 0;
+    transform: rotateY(90deg);
+    transform-origin: right;
+}
+
+/* controls */
+
+.controls {
+    position: absolute;
+    bottom: -15rem;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 10rem;
+    width: 10rem;
+    background-color: rgba(0, 0, 0, .9);
+    border: 1rem solid rgba(0, 0, 0, .8);
+    border-radius: 50%;
+}
+
+.controls a {
+    position: absolute;
+}
+
+.controls a:nth-child(1) {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.controls a:nth-child(2) {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.controls a:nth-child(3) {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.controls a:nth-child(4) {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.controls a:nth-child(5) {
+    top: 10%;
+    right: 10%;
+    transform: rotate(45deg)
+}
+
+.controls a:nth-child(6) {
+    bottom: 10%;
+    left: 10%;
+    transform: rotate(45deg)
+}
+
+.controls i {
+    font-size: 1.5rem;
+    color: #56d5e3;
+    opacity: 0.5;
+    transition: opacity .5s;
+
+}
+
+.controls a:hover i {
+    opacity: 1;
+
+}
+
+/* end of controls */
+/* ending of cube */
+
+
+.section-1-banner {
+    flex-direction: column;
+}
+
+.section-1-banner h1 {
+    font-size: 10rem;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    font-weight: 300;
+}
+
+.section-1-banner p {
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 1rem;
+    margin: 6rem 0 4rem 0;
+}
+
+.section-1-banner span {
+    font-size: 4rem;
+    margin-bottom: 5rem;
+}
+
+.section-1-banner button {
+    padding: 2rem 4rem;
+    font-size: 2rem;
+    background-color: var(--blackcolor);
+    color: var(--primarycolor);
+    letter-spacing: .5rem;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+    clip-path: polygon(50% 0%,
+            81% 5%,
+            100% 0,
+            100% 100%,
+            80% 95%,
+            50% 100%,
+            20% 95%,
+            0 100%,
+            0 0,
+            23% 5%);
+    transition: clip-path .5s;
+
+}
+
+.section-1-banner button:hover {
+    clip-path: polygon(40% 15%,
+            77% 15%,
+            100% 10%,
+            100% 90%,
+            75% 85%,
+            40% 85%,
+            30% 100%,
+            0 50%,
+            0 50%,
+            30% 0);
+
+}
+
+.slideshow {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.slideshow div {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.slideshow div.change {
+    opacity: 1;
+}
