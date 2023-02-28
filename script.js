@@ -1,3 +1,17 @@
+//cube
+let y=0
+const cube = document.querySelector('.cube')
+
+const palyPlause = () => {
+    setInterval(() => {
+    cube.style.transform=`rotateY(${y++}deg)`
+    },100)
+}
+
+palyPlause()
+//cube end
+
+
 // slideshow
 const slideShowDiv = () => {
     for (let i = 1; i <= 6; i++) {
@@ -22,23 +36,23 @@ let a = 1;
 
 const slideshow = () => {
     setInterval
-    (() => {
+        (() => {
 
-        a++
+            a++
 
-        const div = document.querySelector('.slideshow .change')
+            const div = document.querySelector('.slideshow .change')
 
-        div.classList.remove('change')
+            div.classList.remove('change')
 
-    
 
-        if (a < divs.length) {
-            div.nextElementSibling.classList.add('change')
-        }
-        else {
-            a = 1
-        }
-    }, 1000)
+
+            if (a < divs.length) {
+                div.nextElementSibling.classList.add('change')
+            }
+            else {
+                a = 1
+            }
+        }, 1000)
 }
 
-slideshow ()
+slideshow()
